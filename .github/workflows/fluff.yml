@@ -3,6 +3,9 @@ name: SQLFluff
 on:
   - pull_request
 
+permissions:
+  checks: write
+
 jobs:
   lint-models:
     runs-on: ubuntu-latest

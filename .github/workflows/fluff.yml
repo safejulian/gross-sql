@@ -48,8 +48,7 @@ jobs:
         if: steps.get_files_to_lint.outputs.lintees != ''
         shell: bash -l {0}
         run: |
-          which sqlfluff
-          sqlfluff lint --dialect tsql--format github-annotation --annotation-level failure --nofail ${STEPS_GET_FILES_TO_LINT_OUTPUTS_LINTEES} > annotations.json
+          sqlfluff lint --dialect tsql --format github-annotation --annotation-level failure --nofail ${STEPS_GET_FILES_TO_LINT_OUTPUTS_LINTEES} > annotations.json
         env:
           STEPS_GET_FILES_TO_LINT_OUTPUTS_LINTEES: ${{ steps.get_files_to_lint.outputs.lintees }}
       - name: Annotate

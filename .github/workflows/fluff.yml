@@ -8,9 +8,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: checkout
-        uses: checkout@v2
+        uses: actions/checkout@v6
       - name: Install Python
-        uses: setup-python@v2
+        uses: actions/setup-python@v5
         with:
           python-version: "3.7"
       - name: install sqlfluff
